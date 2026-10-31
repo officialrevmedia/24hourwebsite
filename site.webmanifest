@@ -1,0 +1,27 @@
+{
+  "name": "24hourwebsite.ca",
+  "short_name": "24 Hour Website",
+  "description": "Website, logo and brand kit in 24 hours for $499. Powered by Rev Media.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F2F1EC",
+  "theme_color": "#06320E",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,36 +1,39 @@
 # 24hourwebsite.ca
 
-Campaign landing page for the 24 Hour Website offer, powered by Rev Media.
+Website, logo and brand kit in 24 hours for $499. A Rev Media service. Plain HTML, CSS and JavaScript, hosted on GitHub Pages. Every page is pre-rendered: the full content is in the HTML that Google receives, with no build step and no framework.
 
-## Files
-- `index.html` — the site
-- `404.html` — branded not-found page (served automatically by GitHub Pages)
-- `thankyou.html` — form success page
-- `styles.css`, `app.js` — styles and interactions
-- `assets/` — images, logos, favicon, OG image
-- `CNAME` — custom domain for GitHub Pages
-- `robots.txt`, `sitemap.xml`, `.nojekyll` — SEO / Pages config
+## Upload
 
-## Deploy to GitHub Pages
-1. Create a new GitHub repository and upload **all** of these files at the repo root (keep the `assets/` folder intact).
-2. In the repo, go to **Settings → Pages**.
-3. Under **Build and deployment**, set **Source = Deploy from a branch**, branch **main**, folder **/ (root)**. Save.
-4. Under **Custom domain**, the `CNAME` file already sets `24hourwebsite.ca`. Confirm it shows there.
-5. At your domain registrar, point DNS to GitHub Pages:
-   - Four `A` records on the apex (`@`): `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - One `CNAME` record on `www` → `<your-github-username>.github.io`
-6. Back in Settings → Pages, tick **Enforce HTTPS** once the certificate is issued.
+1. Open the GitHub repository that publishes 24hourwebsite.ca and choose **Add file > Upload files**.
+2. Drag in everything from this folder, including the `assets` folder and the hidden `.nojekyll` file (on a Mac, press Cmd + Shift + . in Finder to show hidden files).
+3. Commit to `main`. GitHub Pages republishes within a minute or two.
 
-> **Domain note:** the `CNAME` file is set to `24hourwebsite.ca`. If your registered domain is spelled differently, edit `CNAME` (and the absolute URLs in `index.html` / `sitemap.xml` / `robots.txt`) to match exactly.
+Files from the previous version that are no longer used and can be deleted: `styles.css`, `app.js`, and the old `.jpg` and `.png` files sitting directly inside `assets/` (the new images live in `assets/img/`). Leaving them does no harm.
 
-## Contact form
-The intake form posts to **FormSubmit** so submissions email **info@revmedia.ca** with no backend.
-- The **first** time the form is submitted, FormSubmit sends a one-time activation email to `info@revmedia.ca`. Click the link in it once to start receiving submissions.
-- On success the page shows an inline confirmation; if JavaScript is off, it redirects to `thankyou.html`.
+`CNAME` keeps the custom domain set to `24hourwebsite.ca`. The old `thankyou.html` address still works and forwards to `/thank-you/`.
 
-## SEO included
-- Optimized `<title>`, meta description, keywords, canonical, Open Graph + Twitter cards
-- `ProfessionalService` and `FAQPage` structured data (JSON-LD)
-- `sitemap.xml` + `robots.txt`
-- Outbound links to live client sites and a backlink to revmedia.ca
-- Compressed images for fast load and mobile-first responsive layout
+## Pages
+
+| URL | Page |
+| --- | --- |
+| `/` | Home |
+| `/work/` | All 9 case studies |
+| `/pricing/` | What is included for $499 |
+| `/how-it-works/` | Process and guarantee |
+| `/faq/` | FAQ |
+| `/start/` | Intake form |
+| `/privacy/` | Privacy policy |
+| `/thank-you/` | Form confirmation (not indexed) |
+| `404.html` | Custom not-found page (not indexed) |
+
+## Forms
+
+The intake forms on `/`, `/work/` and `/start/` send to **info@revmedia.ca** through FormSubmit. If FormSubmit asks for activation, click the link in the email it sends to info@revmedia.ca, then test again.
+
+## Google Analytics
+
+Open `analytics.js`, paste your GA4 Measurement ID (starts with `G-`) between the quotes, and upload that one file. Leave it empty and nothing loads. Events sent: `generate_lead` (intake sent), `click_call`, `click_email`.
+
+## SEO built in
+
+Unique title and meta description on every page, one H1 per page, canonical tags, Open Graph and Twitter images, breadcrumbs (visible and in schema), ProfessionalService, Offer, FAQPage, HowTo and BreadcrumbList structured data, `sitemap.xml`, `robots.txt` open to Google and AI crawlers, WebP images with alt text and fixed dimensions, a self-hosted font, and no redirect chains.
